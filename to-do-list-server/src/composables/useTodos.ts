@@ -18,7 +18,7 @@ export function useTodos() {
     const completedPost = {
       completed: true,
     };
-    fetchData(`${URL}/${id}`, {
+    fetchData(`${URL_DB}/${id}`, {
       method: 'PATCH',
       body: JSON.stringify(completedPost),
     }).then(() => {
@@ -27,7 +27,7 @@ export function useTodos() {
   };
 
   const removeTodo = (id: string) => {
-    fetchData(`${URL}/${id}`, {
+    fetchData(`${URL_DB}/${id}`, {
       method: 'DELETE',
     }).then(() => {
       fetchTodos();
@@ -80,3 +80,4 @@ export function useTodos() {
     newTodoText,
   };
 }
+
